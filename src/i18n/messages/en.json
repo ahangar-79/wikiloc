@@ -1,0 +1,11 @@
+{
+  "HomePage": {
+    "name" : "wikiloc",
+    "title": "Add New Route",
+    "titleLabel": "Route Title",
+    "descriptionLabel": "Description",
+    "submit": "Submit Route"
+  }
+}
+
+  
