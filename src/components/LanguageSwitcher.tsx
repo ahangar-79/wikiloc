@@ -19,7 +19,7 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="flex gap-2">
-      {locales.map((loc) => (
+      {locales.map((loc: any) => (
         <button
           key={loc}
           onClick={() => switchTo(loc)}

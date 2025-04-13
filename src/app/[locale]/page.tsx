@@ -1,6 +1,8 @@
 // app/page.tsx
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import '../../styles/global.css'
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const t = useTranslations("HomePage");
