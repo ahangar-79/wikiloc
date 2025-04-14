@@ -1,11 +1,23 @@
 {
   "HomePage": {
+    "login": "Login",
+    "register": "Register",
     "name" : "wikiloc",
+    "welcome": "Welcome to Wikiloc",
+    "description": "Discover nature trails, cycling and hiking routes and record your own route.",
     "title": "Add New Route",
+    "lastRoutes": "Latest Routes",
+    "routeTitle": "Route Title",
+    "routeNumber": "Route Number",
+    "routeDescription": "Route Description",
+    "submit": "Submit Route"
+    
+  },
+  "CreatePage": {
+    "title": "Create New Route",
     "titleLabel": "Route Title",
     "descriptionLabel": "Description",
     "submit": "Submit Route"
   }
 }
-
   
