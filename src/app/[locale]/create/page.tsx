@@ -8,7 +8,7 @@ export default function CreateRoute() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const router = useRouter();
-  const t = useTranslations('Form');
+  const t = useTranslations('CreatePage');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

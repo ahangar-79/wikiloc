@@ -1,4 +1,5 @@
-// app/page.tsx
+'use client';
+
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import '../../styles/global.css'
@@ -12,17 +13,17 @@ export default function Home() {
         <h1 className="text-3xl font-bold">{t("name")}</h1>
         <nav className="space-x-4">
           <Link href="/login" className="text-blue-600 hover:underline">
-            ورود
+            {t("login")}
           </Link>
           <Link href="/register" className="text-blue-600 hover:underline">
-            ثبت‌نام
+            {t("register")}
           </Link>
         </nav>
       </header>
 
       <section className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">به Wikiloc خوش اومدی 👋</h2>
-        <p className="text-gray-600">مسیرهای طبیعت‌گردی، دوچرخه‌سواری و کوهنوردی رو کشف کن و مسیر خودتو ثبت کن.</p>
+        <h2 className="text-xl font-semibold mb-2"> {t("welcome")}👋</h2>
+        <p className="text-gray-600">{t("description")}</p>
       </section>
 
       <section className="mb-10">
@@ -30,19 +31,19 @@ export default function Home() {
           href="/create"
           className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
         >
-          ➕ افزودن مسیر جدید
+            {t("addRoute")}
         </Link>
       </section>
 
       <section>
-        <h3 className="text-lg font-semibold mb-3">آخرین مسیرها</h3>
+        <h3 className="text-lg font-semibold mb-3">{t("lastRoutes")}</h3>
         <ul className="space-y-4">
           {[1, 2, 3].map((id) => (
             <li key={id} className="border p-4 rounded shadow-sm hover:shadow-md transition">
               <Link href={`/routes/${id}`} className="block text-blue-700 font-medium hover:underline">
-                مسیر شماره {id}
+                {t("routeTitle")} {id}
               </Link>
-              <p className="text-sm text-gray-500">توضیح کوتاه مسیر {id}</p>
+              <p className="text-sm text-gray-500">{t("routeDescription")} {id}</p>
             </li>
           ))}
         </ul>

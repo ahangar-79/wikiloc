@@ -1,11 +1,23 @@
 {
   "HomePage": {
-    "name" : "ویکی لک",
-    "title": "افزودن مسیر جدید",
+    "login": "ورود",
+    "register": "ثبت‌نام",
+    "name" : "ویکی لوک",
+    "welcome": "به ویکی لوک خوش آمدید",
+    "description": "مسیرهای طبیعت‌گردی، دوچرخه‌سواری و کوهنوردی رو کشف کن و مسیر خودتو ثبت کن.",
+    "addRoute": "افزودن مسیر جدید",
+    "lastRoutes": "آخرین مسیرها",
+    "routeTitle": "عنوان مسیر",
+    "routeNumber": "شماره مسیر",
+    "routeDescription": "توضیحات مسیر",
+    
+
+    "submit": "ثبت مسیر"
+  },
+  "CreatePage": {
+    "title": " ایجاد مسیر جدید",
     "titleLabel": "عنوان مسیر",
     "descriptionLabel": "توضیحات",
     "submit": "ثبت مسیر"
   }
 }
-
-  
