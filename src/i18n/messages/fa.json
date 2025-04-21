@@ -1,7 +1,8 @@
 {
   "HomePage": {
     "login": "ورود",
-    "register": "ثبت‌نام",
+    "register": "ثبت‌ نام",
+    "logout": "خروج",
     "name" : "ویکی لوک",
     "welcome": "به ویکی لوک خوش آمدید",
     "description": "مسیرهای طبیعت‌گردی، دوچرخه‌سواری و کوهنوردی رو کشف کن و مسیر خودتو ثبت کن.",
@@ -10,8 +11,6 @@
     "routeTitle": "عنوان مسیر",
     "routeNumber": "شماره مسیر",
     "routeDescription": "توضیحات مسیر",
-    
-
     "submit": "ثبت مسیر"
   },
   "CreatePage": {
@@ -19,5 +18,9 @@
     "titleLabel": "عنوان مسیر",
     "descriptionLabel": "توضیحات",
     "submit": "ثبت مسیر"
+  },
+  "DashboardPage": {
+    "title": "داشبورد",
+    "welcome": "خوش آمدید {name}!"
   }
 }
