@@ -7,9 +7,6 @@ import SignOutButton from "@/components/signout-button";
 import { auth } from "@/auth";
 import { getTranslations } from "next-intl/server";
 
-// import { Link } from "@/i18n/navigation";
-
-
 // eslint-disable-next-line
 export default async function Home({
   params,
