@@ -2,10 +2,13 @@ import "../../styles/global.css";
 
 import { Fragment } from "react";
 import Header from "@/components/Header";
-import { Link } from "@/i18n/navigation";
+import Link from "next/link";
 import SignOutButton from "@/components/signout-button";
 import { auth } from "@/auth";
 import { getTranslations } from "next-intl/server";
+
+// import { Link } from "@/i18n/navigation";
+
 
 // eslint-disable-next-line
 export default async function Home({
