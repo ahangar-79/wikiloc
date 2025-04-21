@@ -1,13 +1,13 @@
 import { getRequestConfig } from "next-intl/server";
-import { locales } from "./routing";
-import { notFound } from "next/navigation";
+import { hasLocale } from "next-intl";
+import { routing } from "./routing";
 
-export default getRequestConfig(async ({ locale = ""  }) => {
+export default getRequestConfig(async ({ requestLocale }) => {
   // Typically corresponds to the `[locale]` segment
-
-  // eslint-disable-next-line
-  if (!locales.includes(locale as any)) notFound();
-
+  const requested = await requestLocale;
+  const locale = hasLocale(routing.locales, requested)
+    ? requested
+    : routing.defaultLocale;
 
   return {
     locale,

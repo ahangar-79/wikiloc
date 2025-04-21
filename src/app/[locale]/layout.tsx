@@ -1,7 +1,10 @@
-import {hasLocale, NextIntlClientProvider} from 'next-intl';
 import '../../styles/global.css';
+
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { setRequestLocale } from 'next-intl/server';
 // import {routing} from '@/i18n/routing';
  
 export default async function LocaleLayout({
@@ -17,6 +20,7 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  setRequestLocale(locale);
 
   const direction = locale === 'fa' ? 'rtl' : 'ltr';
 

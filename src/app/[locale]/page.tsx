@@ -1,15 +1,21 @@
-import { getTranslations } from "next-intl/server";
 import "../../styles/global.css";
-import { auth } from "@/auth";
+
 import { Fragment } from "react";
-import SignOutButton from "@/components/signout-button";
-import { Link } from "@/i18n/navigation";
 import Header from "@/components/Header";
+import { Link } from "@/i18n/navigation";
+import SignOutButton from "@/components/signout-button";
+import { auth } from "@/auth";
+import { getTranslations } from "next-intl/server";
 
 // eslint-disable-next-line
-export default async function Home() {
-  
-  const t = await getTranslations("HomePage");
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  const t = await getTranslations({ locale, namespace: "HomePage" });
   // const t = useTranslations("HomePage");
   const session = await auth();
 
