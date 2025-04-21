@@ -1,11 +1,14 @@
 import { getTranslations } from "next-intl/server";
-import Link from "next/link";
 import "../../styles/global.css";
 import { auth } from "@/auth";
 import { Fragment } from "react";
 import SignOutButton from "@/components/signout-button";
+import { Link } from "@/i18n/navigation";
+import Header from "@/components/Header";
 
-export default async function Home({ params }: { params: { locale: string } }) {
+// eslint-disable-next-line
+export default async function Home() {
+  
   const t = await getTranslations("HomePage");
   // const t = useTranslations("HomePage");
   const session = await auth();
@@ -34,6 +37,8 @@ export default async function Home({ params }: { params: { locale: string } }) {
         </nav>
       </header>
 
+      <Header />
+
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2"> {t("welcome")}👋</h2>
         <p className="text-gray-600">{t("description")}</p>
@@ -41,7 +46,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 
       <section className="mb-10">
         <Link
-          href={`/${params.locale}/create`}
+          href={`/create`}
           className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
         >
           {t("addRoute")}
@@ -73,16 +78,4 @@ export default async function Home({ params }: { params: { locale: string } }) {
   );
 }
 
-// import { useTranslations } from "next-intl";
-// import Link from "next/link";
-// import '../../styles/global.css'
-// import { Button } from "@/components/ui/button";
-// import { auth } from "@/auth"
-// import { redirect } from "next/navigation"
-
-// export default async function Home() {
-//   const session = await auth()
-
-//   if (!session) {
-//     redirect('/login')
-//   }
+//

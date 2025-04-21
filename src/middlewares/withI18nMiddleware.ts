@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import type { NextFetchEvent, NextRequest } from 'next/server';
 import { match as matchLocale } from '@formatjs/intl-localematcher';
 import { CustomMiddleware } from './chain';
-// import createMiddleware from 'next-intl/middleware';
 import { routing } from '../i18n/routing';
 import Negotiator from 'negotiator';
 
@@ -11,6 +10,7 @@ function getLocale(request: NextRequest): string | undefined {
     const negotiatorHeaders: Record<string, string> = {};
     request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
+    // eslint-disable-next-line
     // @ts-ignore locales are readonly
     const locales: string[] = routing.locales;
     const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
@@ -33,7 +33,7 @@ export function withI18nMiddleware(middleware: CustomMiddleware) {
         );
 
         if (pathnameIsMissingLocale) {
-            const locale = getLocale(request)
+            const locale = await getLocale(request)
             const redirectURL = new URL(request.url)
             if (locale) {
                 redirectURL.pathname = `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`
@@ -44,6 +44,9 @@ export function withI18nMiddleware(middleware: CustomMiddleware) {
 
             return NextResponse.redirect(redirectURL.toString())
         }
+
+
+        console.log(response)
 
         return middleware(request, event, response);
     };
